@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Space tourism website</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body id="home">
+  <div class="navpos">
+    <div class="navdiv">
+    <img src="./assets/shared/logo.svg" class="logo">
+    <div class="line"></div>
+    <nav class="navbar">
+    <img src="./assets/shared/icon-close.svg" class="close" onclick="closenav()">
+    <a href="./" class="aopt"><div class="opt"><span>00</span>Home</div></a>
+    <a href="./destination.html" class="aopt"><div class="opt"><span>01</span>Destination</div></a>
+    <a href="./crew.html" class="aopt"><div class="opt"><span>02</span>Crew</div></a>
+    <a href="./technology.html" class="aopt"><div class="opt"><span>03</span>Technology</div></a>
+    </nav>
+    <img src="./assets/shared/icon-hamburger.svg" class="ham" onclick="opennav()"/>
+    <script>
+      function opennav()
+      {
+        document.querySelector('.navbar').style.width = '250px'
+        document.querySelector('.ham').style.display = 'none'
+      }
+      function closenav()
+      {
+        document.querySelector('.navbar').style.width = '0px'
+        document.querySelector('.ham').style.display = 'block'
+      }
+      let path  = window.location.pathname.slice(1)
+      var opt = document.querySelectorAll('.aopt')
+      opt.forEach((e)=>{
+        var a = e.href.split('/')[3]
+        if(path==='/')
+          e.id='active'
+        else if(a===path)
+          e.id = 'active'
+        else
+          e.id = ''
+      }
+      )
+    </script>
+  </div>
+  </div>
+<div class="homedesc">
+  <h5>So, you want to travel to</h5>
+  <h1>Space</h1>
+  <p>Let’s face it; if you want to go to space, you might as well genuinely go to 
+  outer space and not hover kind of on the edge of it. Well sit back, and relax 
+  because we’ll give you a truly out of this world experience!</p>
+  </div>
+  <a href="./destination.html"><div class="circle"><div class="expand"></div><h3 class="explore">Explore</h3></div></a>
+</body>
+</html>

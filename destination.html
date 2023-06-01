@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Space tourism website</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body id="dest">
+  <div class="navpos">
+    <div class="navdiv">
+    <img src="./assets/shared/logo.svg" class="logo">
+    <div class="line"></div>
+    <nav class="navbar">
+    <img src="./assets/shared/icon-close.svg" class="close" onclick="closenav()">
+    <a href="./" class="aopt"><div class="opt"><span>00</span>Home</div></a>
+    <a href="./destination.html" class="aopt"><div class="opt"><span>01</span>Destination</div></a>
+    <a href="./crew.html" class="aopt"><div class="opt"><span>02</span>Crew</div></a>
+    <a href="./technology.html" class="aopt"><div class="opt"><span>03</span>Technology</div></a>
+    </nav>
+    <img src="./assets/shared/icon-hamburger.svg" class="ham" onclick="opennav()"/>
+    <script>
+      location.hash = '1'
+      function opennav()
+      {
+        document.querySelector('.navbar').style.width = '250px'
+        document.querySelector('.ham').style.display = 'none'
+      }
+      function closenav()
+      {
+        document.querySelector('.navbar').style.width = '0px'
+        document.querySelector('.ham').style.display = 'block'
+      }
+      let path  = window.location.pathname.slice(1)
+      var opt = document.querySelectorAll('.aopt')
+      opt.forEach((e)=>{
+        var a = e.href.split('/')[3]
+        if(path==='/')
+          e.id='active'
+        else if(a===path)
+          e.id = 'active'
+        else
+          e.id = ''
+      }
+      )
+      async function getdata(i){
+      await fetch('data.json').then(res=>{return res.json()}).then(data=>{
+        document.querySelector('h1').textContent =  data['destinations'][i]['name']
+        document.querySelector('.planet').src= data['destinations'][i]['images']['png']
+        document.querySelector('.planetdesc').textContent =  data['destinations'][i]['description']
+        document.querySelector('.dist').textContent =  data['destinations'][i]['distance']
+        document.querySelector('.days').textContent =  data['destinations'][i]['travel']
+      });
+      }
+      getdata(0)
+    </script>
+  </div>
+  </div>
+  <div class="image">
+  <h5 style="color: white;"><strong style="color: #d0d6f9;">01</strong> PICK A LOACTION</h5>
+  <img class="planet"/>
+  </div>
+  <div class="destdesc">
+    <nav class="tabs">
+      <a class='dnav' href="#1"><button id="1" class="opt" onclick="getdata(0)"> Moon</button></a>
+      <a class='dnav' href="#2"><button   id="2" class="opt" onclick="getdata(1)"> Mars</button></a>
+      <a class='dnav' href="#3"><button id="3"  class="opt" onclick="getdata(2)"> Europa</button></a>
+      <a class='dnav' href="#4"><button  id="4" class="opt" onclick="getdata(3)"> Titan</button></a>
+    </nav>
+    <h1 style="color:white"></h1>
+    <p class="planetdesc"></p>
+    <hr></hr>
+    <div class="distanddays">
+      <div class="measure">
+        <p class="sub">avg. distace</p>
+        <h6 class="dist"></h6>
+      </div>  
+      <div class="measure">
+        <p class="sub">est. travel time</p>
+        <h6 class="days"></h6>
+      </div>
+    </div>
+  </div>
+  </p>
+</body>
+</html>

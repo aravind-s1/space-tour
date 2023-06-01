@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Space tourism website</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body id="crew">
+  <div class="navpos">
+    <div class="navdiv">
+    <img src="./assets/shared/logo.svg" class="logo">
+    <div class="line"></div>
+    <nav class="navbar">
+    <img src="./assets/shared/icon-close.svg" class="close" onclick="closenav()">
+    <a href="./" class="aopt"><div class="opt"><span>00</span>Home</div></a>
+    <a href="./destination.html" class="aopt"><div class="opt"><span>01</span>Destination</div></a>
+    <a href="./crew.html" class="aopt"><div class="opt"><span>02</span>Crew</div></a>
+    <a href="./technology.html" class="aopt"><div class="opt"><span>03</span>Technology</div></a>
+    </nav>
+    <img src="./assets/shared/icon-hamburger.svg" class="ham" onclick="opennav()"/>
+    <script>
+      location.hash = '1'
+      function opennav()
+      {
+        document.querySelector('.navbar').style.width = '250px'
+        document.querySelector('.ham').style.display = 'none'
+      }
+      function closenav()
+      {
+        document.querySelector('.navbar').style.width = '0px'
+        document.querySelector('.ham').style.display = 'block'
+      }
+      let path  = window.location.pathname.slice(1)
+      var opt = document.querySelectorAll('.aopt')
+      opt.forEach((e)=>{
+        var a = e.href.split('/')[3]
+        if(path==='/')
+          e.id='active'
+        else if(a===path)
+          e.id = 'active'
+        else
+          e.id = ''
+      }
+      )
+      async function getdata(i){
+      await fetch('data.json').then(res=>{return res.json()}).then(data=>{
+        document.querySelector('.crewname').textContent =  data['crew'][i]['name']
+        document.querySelector('.crewimg').src= data['crew'][i]['images']['png']
+        document.querySelector('.crewbio').textContent =  data['crew'][i]['bio']
+        document.querySelector('.crewrole').textContent =  data['crew'][i]['role']
+      });
+      }
+      getdata(0)
+    </script>
+    </div>
+  </div>
+  <style>
+    h5{
+      position: absolute;
+      width: 286px;
+      height: 34px;
+      left: calc(50% - 286px/2 - 410.5px);
+      top: calc(50% - 34px/2 - 221px);
+    }
+  </style>
+  <h5 style="color: white;"><strong style="color: #d0d6f9;">02</strong> MEET YOUR CREW</h5>
+    <nav class="slidenav">
+      <a class='cnav' href="#1"><button id="1" class="opt" onclick="getdata(0)"> </button></a>
+      <a class='cnav' href="#2"><button   id="2" class="opt" onclick="getdata(1)"> </button></a>
+      <a class='cnav' href="#3"><button id="3"  class="opt" onclick="getdata(2)"> </button></a>
+      <a class='cnav' href="#4"><button  id="4" class="opt" onclick="getdata(3)"> </button></a>
+    </nav>
+  <img class="crewimg"/>
+  <h4 class="crewrole"></h4>
+  <h3 class='crewname' style="color:white"></h3>
+  <p class="crewbio"></p>
+</body>
+</html>

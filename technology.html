@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Space tourism website</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body id="tech">
+  <div class="navpos">
+    <div class="navdiv">
+    <img src="./assets/shared/logo.svg" class="logo">
+    <div class="line"></div>
+    <nav class="navbar">
+    <img src="./assets/shared/icon-close.svg" class="close" onclick="closenav()">
+    <a href="./" class="aopt"><div class="opt"><span>00</span>Home</div></a>
+    <a href="./destination.html" class="aopt"><div class="opt"><span>01</span>Destination</div></a>
+    <a href="./crew.html" class="aopt"><div class="opt"><span>02</span>Crew</div></a>
+    <a href="./technology.html" class="aopt"><div class="opt"><span>03</span>Technology</div></a>
+    </nav>
+    <img src="./assets/shared/icon-hamburger.svg" class="ham" onclick="opennav()"/>
+    <script>
+      location.hash = '1'
+      function opennav()
+      {
+        document.querySelector('.navbar').style.width = '250px'
+        document.querySelector('.ham').style.display = 'none'
+      }
+      function closenav()
+      {
+        document.querySelector('.navbar').style.width = '0px'
+        document.querySelector('.ham').style.display = 'block'
+      }
+      let path  = window.location.pathname.slice(1)
+      var opt = document.querySelectorAll('.aopt')
+      opt.forEach((e)=>{
+        var a = e.href.split('/')[3]
+        if(path==='/')
+          e.id='active'
+        else if(a===path)
+          e.id = 'active'
+        else
+          e.id = ''
+      }
+      )
+      async function getdata(i){
+      await fetch('data.json').then(res=>{return res.json()}).then(data=>{
+        document.querySelector('.techname').textContent =  data['technology'][i]['name']
+        document.querySelector('#portrait').src= data['technology'][i]['images']['portrait']
+        document.querySelector('#landscape').src = data['technology'][i]['images']['portrait']
+        document.querySelector('.description').textContent =  data['technology'][i]['description']
+      });
+      }
+      getdata(0)
+    </script>
+  </div>
+  </div>
+  <style>
+    h5{
+      position: absolute;
+      width: 305px;
+      height: 34px;
+      left: 166.5px;
+      top: 212px;
+      display: flex;
+      flex-direction: row;
+    }
+  </style>
+    <h5 style="color: white;" class="quest"><strong style="color: #d0d6f9; margin-right: 5px;">03</strong> SPACE LANCH 101</h5>
+    <nav class="roundnav">
+      <a class='tnav' href="#1"><button id="1" class="opt" onclick="getdata(0)">  <h3>1</h3></button></a>
+      <a class='tnav' href="#2"><button   id="2" class="opt" onclick="getdata(1)"><h3>2</h3> </button></a>
+      <a class='tnav' href="#3"><button id="3"  class="opt" onclick="getdata(2)"> <h3>3</h3></button></a>
+    </nav>
+    <img class="techimg" id="portrait"/>
+    <img class="techimg" id="landscape"/>
+    <div class="techdesc">
+      <p class="sub" >the terminology...</p>
+      <h3 class="techname" style="color: white;"></h3>
+      <p class="description" style="color: #d0d6f9;"></p>
+    </div>
+</body>
+</html>

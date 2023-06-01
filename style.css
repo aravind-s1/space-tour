@@ -1,0 +1,628 @@
+*,
+*::before,
+*::after{
+    margin: 0px;
+}
+@font-face {
+    font-family: 'Bellefair';
+    src: url('./assets/shared/Bellefair-Regular.ttf');
+}
+@font-face {
+    font-family: 'Barlow';
+    src: url('./assets/shared/BarlowCondensed-Regular.ttf');
+}
+body{
+    background-color: black;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+.homedesc{
+    font-weight: 100;
+    position: absolute;
+    width: 450px;
+    height: 382px;
+    left: 165px;
+    bottom: 131px;
+    color: white;
+}
+h1{
+    font-family: 'Bellefair',serif;
+    font-size: 150px;
+    font-weight: 400;
+    font-variant-caps: all-petite-caps;
+}
+h2{
+    font-family: 'Bellefair',serif;
+    font-size: 100px;
+    font-weight: 400;
+    font-variant-caps: all-petite-caps;
+}
+h3{
+    font-family: 'Bellefair',serif;
+    font-size: 56px;
+    font-weight: 400;
+    font-variant-caps: all-petite-caps;
+}
+h4{
+    font-family: 'Bellefair',serif;
+    font-size: 32px;
+    font-weight: 400;
+    font-variant-caps: all-petite-caps;
+}
+h5{
+    font-family: 'Barlow';
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 4.75px;
+}
+h6{
+    color: white;
+    font-family: 'Bellefair',serif;
+    font-size: 26px;
+    font-weight: 400;
+    font-variant-caps: all-petite-caps;
+}
+.sub{
+    font-family: 'Barlow';
+    font-size: 14px;
+    font-weight: 400;
+    font-variant-caps: all-petite-caps;
+    letter-spacing: 2.35px;
+}
+p{
+    font-family: 'Barlow';;
+    color: #d0d6f9;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+.planet{
+    width: 445px;
+    height: 445px;
+}
+.destdesc{
+    position: absolute;
+    width: 445px;
+    height: 472px;
+    left: calc(50% - 445px/2 + 334.5px);
+    top: calc(50% - 472px/2 + 96px);    
+}
+.distanddays{
+    display: flex;
+    justify-content: start;
+}
+.measure{
+    margin-right: 79px;
+}
+.tabs{
+    display: flex;
+}
+.tabs button{
+    border: 0px;
+    color: #d0d6f9;
+}
+.tabs button{
+    border: 0px;
+    color: #d0d6f9;
+}
+.tabs button:target{
+    color: white;
+    cursor: pointer;
+    border-bottom: 2px white solid;
+}
+.tabs button:hover{
+    cursor: pointer;
+    border-bottom: 2px #d0d6f9 solid;
+}
+hr{
+    margin-top: 54px;
+    margin-bottom: 28px;
+}
+#home{
+    background-image: url('./assets/home/background-home-desktop.jpg');
+}
+#dest{
+    background-image: url('./assets/destination/background-destination-desktop.jpg');
+}
+#crew{
+    background-image: url('./assets/crew/background-crew-desktop.jpg');
+}
+#tech{
+    background-image: url('./assets/technology/background-technology-desktop.jpg');
+    overflow-y: hidden;
+}
+img{
+    min-height: 40px;
+    min-width: 40px;
+}
+.navpos{
+    display: flex;
+    width: 100vw;
+}
+.navdiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+    height: 100px;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+.logo{
+    margin-left: 55px;
+}
+span{
+    font-weight: 500;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.opt{
+    letter-spacing: 2.7px;
+    font-variant-caps: all-petite-caps;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    background: none;
+    height: 97%;
+}
+.opt:hover{
+    border-bottom: 4px #d0d6f9 solid;
+}
+#active{
+    border-bottom: 4px white solid;
+}
+#active:hover .opt{
+    border-bottom: 0px;
+}
+.opt{
+    font-family: 'Barlow';
+}
+.navbar{
+    min-height: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    padding:0px 125px;
+    width: 831px;
+    display: flex;
+}
+a{
+    align-items: center;
+    justify-content: center;
+}
+img{
+    width: 20px;
+    height: 20px;
+}
+.ham{
+    display: none;
+    opacity: 0;
+}
+.close{
+    display: none;
+}
+.line{
+    height: 2px;
+    background-color: #d0d6f9;
+    width:100%;
+    transform: translateX(50px);
+}
+.slidenav{
+    display: flex;
+    position: absolute;
+    width: 132px;
+    height: 15px;
+    left: calc(50% - 444px/2 - 333px);
+    bottom: 64px;
+}
+.slidenav a{
+    margin: 10px;
+}
+.slidenav button{
+    width: 20px;
+    height: 20px;
+    background-color: grey;
+    border-radius: 100%;
+    border: 0px;
+}
+.slidenav button:hover{
+    background-color: #d0d6f9;
+    border: 0px;
+}
+.slidenav button:target{
+    background-color:white;
+    border: 0px;
+}
+.roundnav{
+    display: flex;
+    flex-direction: column;
+}
+.roundnav button{
+    height: 80px;
+    width: 80px;
+    color: #d0d6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 2px #d0d6f9 solid;
+    margin-bottom: 32px;
+}
+.roundnav button:hover{
+    border: 2px white solid;
+    color: white;
+}
+.roundnav button:target{
+    border: 2px white solid;
+    color: black;
+    background-color: white;
+}
+a{
+    font-size: 16px;
+    letter-spacing: 2.75px;
+    margin-right: 45px;
+}
+.crewimg{
+    position: absolute;
+    width: 568.07px;
+    height: 712px;
+    left: calc(50% - 568.07px/2 + 298.96px);
+    top: calc(50% - 712px/2 + 104px);
+}
+.crewrole{
+    position: absolute;
+    left: calc(50% - 214px/2 - 447.5px);
+    top: calc(50% - 37px/2 - 31.5px);
+}
+.crewname{
+    position: absolute;
+    width: 488px;
+    height: 64px;
+    left: calc(50% - 488px/2 - 310.5px);
+    top: calc(50% - 64px/2 + 34px);
+}
+.crewbio{
+    position: absolute;
+    width: 444px;
+    height: 128px;
+    left: calc(50% - 444px/2 - 333px);
+    top: calc(50% - 128px/2 + 157px);
+}
+.techimg{
+    position: absolute;
+    width: 515px;
+    height: 527px;
+    left: calc(50% - 515px/2 + 462.5px);
+    top: calc(50% - 527px/2 + 85.5px);
+}
+.description{
+    display: flex;
+    height: 192px;
+    left: 0%;
+}
+.techdesc{
+    position: absolute;
+    width: 470px;
+    height: 303px;
+    left: calc(50% - 470px/2 - 160px);
+    top: calc(50% - 303px/2 + 84.5px);
+}
+.roundnav{
+    position: absolute;
+    width: 81px;
+    height: 304px;
+    left: calc(50% - 81px/2 - 515.5px);
+    top: calc(50% - 304px/2 + 85px);
+}
+.circle{
+    position: absolute;
+    right: 165px;
+    bottom: 131px;
+    height: 274px;
+    width: 274px;
+    background-color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.explore{
+    z-index: 1;
+    color: black;
+}
+.expand{
+    position: absolute;
+    height: 274px;
+    width: 274px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 100%;
+}
+.circle:hover > .expand{
+    transform: scale(140%);
+}
+.image{
+    position: absolute;
+    width: 509px;
+    height: 576px;
+    left: calc(50% - 509px/2 - 299.5px);
+    top: calc(50% - 576px/2 + 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#landscape{
+    display: none;
+}
+@media screen and (max-width:973px) {
+    .line{
+        display: none;
+    }
+}
+@media screen and (max-width:920px) {
+
+    .navdiv{
+        margin-top: 0px;
+        margin-left: 0px;
+        width: 729px;
+        display: flex;
+        justify-content: space-between;
+    }
+    span{
+        display: none;
+    }
+    .navbar{
+        width: 400px;
+        padding-left: 47px;
+    }
+    #home{
+        background-image: url('./assets/home/background-home-tablet.jpg');
+    }
+    #dest{
+        background-image: url('./assets/destination/background-destination-tablet.jpg');
+    }
+    #crew{
+        background-image: url('./assets/crew/background-crew-tablet.jpg');
+        overflow-y: hidden;
+    }
+    #tech{
+        background-image: url('./assets/technology/background-technology-tablet.jpg');
+    }
+    strong{
+        color: gray;
+    }
+    .homedesc{
+        position: absolute;
+    width: 450px;
+    height: 334px;
+    left: calc(50% - 450px/2);
+    top: calc(50% - 334px/2 - 143px);
+    text-align: center;
+    }
+    .circle{
+        position: absolute;
+        width: 242px;
+        height: 242px;
+        left: calc(50% - 242px/2);
+        top: calc(50% - 242px/2 + 301px);
+
+    }
+}
+@media screen and (max-width:376px) {
+    #home{
+        background-image: url('./assets/home/background-home-mobile.jpg');
+    }
+    #dest{
+        background-image: url('./assets/destination/background-destination-mobile.jpg');
+    }
+    #crew{
+        background-image: url('./assets/crew/background-crew-mobile.jpg');
+    }
+    #tech{
+        background-image: url('./assets/technology/background-technology-mobile.jpg');
+    }
+    .navdiv{
+        justify-content: space-between;
+    }
+    .navbar{
+        z-index: 2;
+        flex-direction: column;
+        position: fixed;
+        top:0px;
+        right: 0px;
+        height: 100vh;
+        width: 0px;
+        padding: 0px;
+        background: rgba(255, 255, 255,0.04);
+        backdrop-filter: blur(40.7742px);
+    }
+    .ham{
+        display: inline;
+        opacity: 1;
+        margin-right: 24px;
+    }
+    .close{
+        position: relative;
+        display: inline;
+        margin:33px 0px;
+        right: -180px;
+    }
+    .navbar a{
+        margin:35px 0px;
+        margin-left: 35px;
+    }
+    .navbar .opt:hover{
+        border-right: 4px #d0d6f9 solid;
+        border-bottom: 0px;
+    }
+    #active{
+        border-right: 4px white solid;
+        border-bottom: 0px;
+    }
+    #active:hover .opt{
+        border-bottom: 0px;
+    }
+    span{
+        display: inline;
+        font-weight: 600px;
+    }
+    .logo{
+        margin-left: 24px;
+    }
+    .homedesc{
+        position: absolute;
+        width: 327px;
+        height: 276px;
+        left: calc(50% - 327px/2);
+        top: calc(50% - 276px/2 - 83.5px);           
+    }
+    .circle{
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        left: calc(50% - 150px/2 + 0.5px);
+        top: calc(50% - 150px/2 + 210.5px);
+    }
+    .expand{
+        width: 150px;
+        height: 150px;
+    }
+    .explore{
+        font-size: 32px;
+    }
+    .image{
+        width: 227px;
+        height: 222px;
+        left: calc(50% - 227px/2 - 2px);
+        top: 87px;
+        align-items: center;
+        text-align: center;
+    }
+    .image .planet{
+        width: 170px;
+        height: 170px;
+    }
+    .image img{
+        width: 170px;
+        height: 170px;
+    }
+    .image h5{
+        font-size: 16px;   
+        width: 221px;
+        height: 19px;
+    }
+    .destdesc{
+        position: absolute;
+        width: 321px;
+        height: 459px;
+        left: calc(50% - 321px/2 + 3px);
+        top: calc(50% - 459px/2 + 137.5px);
+        text-align: center;
+    }
+    .destdesc h1{
+        font-size: 100px;
+    }
+    .distanddays{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .distanddays .measure{
+        margin: 0px;
+        margin-bottom: 32px;
+    }
+    .crewimg{
+        position: absolute;
+        width: 327px;
+        height: 223px;
+        left: 24px;
+        top: 139px;
+        border-bottom: 1px white solid;
+    }
+    .slidenav{
+        position: absolute;
+        left: 114px;
+        top: 394px;
+    }
+    .slidenav button{
+        height: 15px;
+        width: 15px;
+    }
+    #crew{
+        text-align: center;
+    }
+    .crewrole{
+        width: 44px;
+        height: 18px;
+        left: calc(50% - 44px/2);
+        top: 450px;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+    }
+    .crewname{
+        font-size: 36px;
+        top: 500px;
+        width: 327px;
+        left: calc(50% - 327px/2);
+    }
+    .crewbio{
+        top:550px;
+        width: 327px;
+        left: calc(50% - 327px/2);
+    }
+    .techimg{
+        position: absolute;
+        width: 375px;
+        height: 170px;
+        left: 0px;
+        top: 139px;
+    }
+    .roundnav{
+        z-index: 1;
+        position: absolute;
+        width: 152px;
+        height: 40px;
+        left: calc(25%);
+        top: 343px;
+        flex-direction: row;
+    }
+    .roundnav button{
+        height: 40px;
+        width: 40px;
+        margin-bottom: 0px;
+    }
+    .roundnav h3{
+        font-size: 30px;
+    }
+    .tnav{
+        margin-right: 16px;
+    }
+    .techdesc{
+        align-items: center;
+        position: absolute;
+        width: 327px;
+        height: 220px;
+        left: calc(50% - 327px/2);
+        top: calc(50% - 220px/2 + 164px);
+    }
+    .techname{
+        font-size: 36px;
+    }
+    .quest{
+        position: absolute;
+        left: calc(50% - 176px/2 + 0.5px);
+        top: calc(50% - 19px/2 - 257.5px);
+        font-size: 16px;
+    }
+    #portrait{
+        display: none;
+    }
+    #landsacpe{
+        display: inline;
+    }
+}
