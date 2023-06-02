@@ -30,11 +30,11 @@
         document.querySelector('.navbar').style.width = '0px'
         document.querySelector('.ham').style.display = 'block'
       }
-      let path  = window.location.pathname.slice(1)
+      let path  = window.location.pathname.split('/').reverse()[0]
       var opt = document.querySelectorAll('.aopt')
       opt.forEach((e)=>{
-        var a = e.href.split('/')[3]
-        if(path==='/')
+        var a = e.href.split('/').reverse()[0]
+        if(path==='' or path==)
           e.id='active'
         else if(a===path)
           e.id = 'active'
