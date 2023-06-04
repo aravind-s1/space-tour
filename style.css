@@ -98,6 +98,15 @@ p{
 .tabs{
     display: flex;
 }
+.navbarmobile{
+    display: none;
+}
+#pc{
+    display: flex;
+}
+#mobile{
+    display: none;
+}
 .tabs button{
     border: 0px;
     color: #d0d6f9;
@@ -119,6 +128,7 @@ hr{
     margin-top: 54px;
     margin-bottom: 28px;
 }
+
 #home{
     background-image: url('./assets/home/background-home-desktop.jpg');
 }
@@ -130,7 +140,6 @@ hr{
 }
 #tech{
     background-image: url('./assets/technology/background-technology-desktop.jpg');
-    overflow-y: hidden;
 }
 img{
     min-height: 40px;
@@ -185,7 +194,7 @@ span{
     min-height: 100%;
     background: rgba(255, 255, 255, 0.04);
     padding:0px 125px;
-    width: 831px;
+    width: 100%;
     display: flex;
 }
 a{
@@ -384,7 +393,6 @@ a{
     }
     #crew{
         background-image: url('./assets/crew/background-crew-tablet.jpg');
-        overflow-y: hidden;
     }
     #tech{
         background-image: url('./assets/technology/background-technology-tablet.jpg');
@@ -615,6 +623,7 @@ a{
     }
     .quest{
         position: absolute;
+        width: 200px;
         left: calc(50% - 176px/2 + 0.5px);
         top: calc(50% - 19px/2 - 257.5px);
         font-size: 16px;
@@ -622,7 +631,14 @@ a{
     #portrait{
         display: none;
     }
-    #landsacpe{
+    #landscape{
         display: inline;
+        background-position-y: bottom;
+    }
+    #pc{
+        display: none;
+    }
+    #mobile{
+        display: flex;
     }
 }
